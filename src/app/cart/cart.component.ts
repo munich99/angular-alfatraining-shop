@@ -12,12 +12,11 @@ import { CartService } from '../cart.service';
 export class CartComponent {
 
   items;  
-  totalprice;
-  // email checkoutForms;
-  thx:boolean = false;
+  totalprice;    
 
   registerForm: FormGroup;
   submitted = false;
+  thx = false;
 
   constructor(
     private cartService:CartService,
@@ -25,45 +24,27 @@ export class CartComponent {
       // holt Bestellliste und Gesamtpreis vom CartService-Methode    
       this.items = this.cartService.getItems();
       this.totalprice = this.cartService.totalPrice();
+
       // console.log(this.items.lenght,"länge")
       console.log(this.totalprice,"abgezogen cart");
-      // Variablen Deklaration für Lieferadresse aus dme Formular
-      // email this.checkoutForms = this.formBuilder.group(  {name:'', adress:''}  );      
 
-      this.registerForm = this.formBuilder.group({
-      
-     
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-});
+      // Variablen Deklaration für Lieferadresse aus dme Formular    
+      this.registerForm = this.formBuilder.group({  
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(6)]]
+      });
   }    
 
- /* email onSubmit(customerData){    
-    console.log(customerData, "Formulardaten")
-    if(customerData.name != "" && customerData.adress != ""){      
-      // Verbraucher Daten werden an den Server/Backend geschickt
-      console.warn("Ihre Bestellung wurde jetz übermittelt", customerData)
-      // Löschen der gesamten Bestellung
-      this.clearList();
-      // Löschen der Zustellungs Informationen
-      this.checkoutForms.reset();
-      // dankes Text
-      this.thx = !this.thx;
-    } else{
-      alert("bitte beide Felder vollständig ausfüllen");
-    }
-  }
-  */
-
   onSubmit() {
-    this.submitted = true;
- 
-    // stop the process here if form is invalid
+    this.submitted = true; 
+    // Geht zum Formular zurück, falls unvollständig
     if (this.registerForm.invalid) {
         return;
     }
- 
-    alert('SUCCESS!!');
+    // Löschen der gesamten Bestellung
+    this.clearList();
+    // dankes Text
+    this.thx = !this.thx;
   }
 
   clearList(){
