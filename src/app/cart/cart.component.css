@@ -1,0 +1,14 @@
+form{
+  margin-bottom: 1em
+}
+
+.klick {
+  cursor: pointer;
+}
+
+div p{
+  margin:0;
+}
+div p:first-child {
+  width:120px;
+}

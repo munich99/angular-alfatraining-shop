@@ -1,0 +1,103 @@
+1.)
+HTML Struktur
+app-root/ app.component.HTML
+  app-top-bar/ top-bar.component.html
+  app-product-list/ product-list.component.html
+
+* Darstellen Produkte *
+- Produktnamen werden eingelesen aus products.ts/Object ##3 let product of products ## 
+- Link/Titel zu den Produkten werden gebildet ##5 <a title=
+- Falls es eine Beschreibung dazu gibt, wird diese eingeblendet ##7 If(product.description)
+- Button zum Teilen mit Freunden. Mit onClick wird eine Methode aufgerufen ##8 onClick=share()
+
+2.)
+HTML Struktur
+app-root/ app.component.HTML
+  app-top-bar/ top-bar.component.html
+  app-product-list/ product-list.component.html
+    app-product-alerts/ product-alerts.component.html
+
+* Abfrage Preise Produkte *
+- Input-Angular Eigenschaft/Deklarationen importieren ###2 import { Input } from '@angular/core';
+- Diese Eigenschaft einen Wert/Variable zuweisen ###12 @Input() product;
+- Falls der Preis größer als 700 ist wird Button eingeblendet ##1  If(product.price
+- app-product-alerts wird in app-product-list dargestellt
+- Eventlistener und seine Eingenschaften importieren ## import { Output, EventEmitter } from '@angular/core';
+                                                        @Output() notify = new EventEmitter();
+- Button "Luxus" OnClick Methode beifügen ###2 onClick=notify.emit()
+- Klick Ereingnis wird zu Parent HTML weitergereicht/ im app-product-list wird mit der Information über dieses Ereingnis eine Methode aufgerufen
+
+3.)
+HTML Struktur
+app-root/ app.component.HTML
+  app-top-bar/ top-bar.component.html
+  app-product-list/ product-list.component.html
+    app-product-alerts/ product-alerts.component.html
+    app-product-details/ app-product-details.component.html
+app-module//router-outlet/ app.module.ts 
+
+* Navigation zu Details einrichten *
+- Komponente für Details-Informationen anlegen
+- im app-module, wo das ganze Angular Projekt Model deklariert wird, wird er Pfad zu Details-Seite festgelegt. Das bedeutet, welche Komponente bei bestimmten Pfad angesprochen werden soll ##18{ path: 'products/:productId', component: ProductDetailsComponent }
+- in app-product-list  wird derpfad im Link eingefügt ###5 [routerLink]="['/products',productId]">
+und laut { path: 'products/:productId', component: ProductDetailsComponent } in entsprechende Komponente weitergeleitet
+
+4.)
+* Produkt Informationen zum Detail Abruf benutzen *
+- Interface/Variablen-Deklaration vom ngModel importieren ins app-product-details importieren ##2 import { ActivatedRoute } from '@angular/router';
+- Produkt Objekt importieren ##3 import { products } from '../products';
+- Produkt Objekt als Eingenschaft festlegen ##12
+- im Constructor Variable route bilden und mit ActivatedRoute für jede geroutete Komponente spezifizieren. Es enthält Informationen über die Route, ihre Parameter und zusätzliche mit der Route verknüpfte Daten.
+- Wenn die Datail-Seite aufgerufen wird/ngOnInit, wird eine Instanz gebildet. Diese bekommt die Parameter und zusätzliche mit der Route verknüpfte Daten/productId.
+- anhand dieser Daten/productId werden Details dargestellt.
+
+------------------------------
+Daten abrufen/übermitteln Ajax/Json
+------------------------------
+
+1.)
+HTML Struktur
+app-root/ app.component.HTML
+  app-top-bar/ top-bar.component.html
+  app-product-list/ product-list.component.html
+    app-product-alerts/ product-alerts.component.html
+    app-product-details/ app-product-details.component.html
+app-module//router-outlet/ app.module.ts 
+CartService/ cart.service.ts
+
+* Service für den Warenkorb *
+- Service generieren, es an andere componenten anbinden ##3 @Injectable()
+- Route/Knotenpunkt bestimmen, für welche componenten es erreichbar sein soll ##4 @Injectable({   providedIn: 'root' })
+- in der Service Klasse ein Array definierten, wo Waren gespeichert werden ## 
+- Methoden definieren:
+    Artikeln in den Warenkorb zu legen ## push(product) 
+    Artikeln in dem Warenkorb anzuzeigen ## return items
+    Artikeln in dem Warenkorb zu löschen ## return items=[]
+
+2.) 
+* Artikeln in Warenkorb legen *
+- Service in product-details importieren / mit construktor() einbinden
+- Methode, um vom Buy Button, in den Warenkorb Artikel zu legen bzw. in die Methode im Service weiterzuleiten
+
+3.)
+
+1.)
+HTML Struktur
+app-root/ app.component.HTML
+  app-top-bar/ top-bar.component.html
+  app-product-list/ product-list.component.html
+    app-product-alerts/ product-alerts.component.html
+    app-product-details/ app-product-details.component.html
+    app-cart/ app-cart.component.html
+app-module//router-outlet/ app.module.ts 
+CartService/ cart.service.ts
+
+* Warenkorbartikel Anzeigen *
+- Service in Warenkorb importieren / mit construktor() einbinden
+- Definieren der items Eigenschaft zum Speichern der Produkte im Warenkorb
+- Legen der Artikel mithilfe der getItems()Methode des Warenkorbservices
+- Aktualisieren des Templates Warenkorb mit ## let item of items
+
+
+
+

@@ -1,0 +1,14 @@
+[
+  {
+    "type": "Express",
+    "price": 25.99
+  },
+  {
+    "type": "2 Tage",
+    "price": 9.99
+  },
+  {
+    "type": "Auf dem Postweg",
+    "price": 2.99
+  }
+]

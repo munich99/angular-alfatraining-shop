@@ -1,0 +1,38 @@
+
+## HTML Struktur - Componenten Struktur ##
+
+app-root/ app.component.HTML
+
+    app-top-bar/ top-bar.component.html --> Header
+    
+    app-product-list/ product-list.component.html --> zeigt Produkte an
+
+      app-product-alerts/ product-alerts.component.html --> zusätzliche, zu hervorhebende Produkt anmerkungen, wenn Preis größer als
+
+      app-product-details/ app-product-details.component.html --> einzelne Produkte mit Bestellmöglichkeit
+
+      app-cart/ app-cart.component.html --> Warenkorb, Bestellliste
+
+        app-shipping/ shipping.component.html --> Versandpreise
+
+app-module//router-outlet/ app.module.ts --> 
+  - Knoten aller Componenten, 
+  - Services ( einmalig geschriebene Methoden, auf die Componenten von überall zugreifen könne und Informationen abholen, verarbeitesn.
+
+CartService/ cart.service.ts
+
+## CSS ##
+style.css -> für alle pages, wird vererbt
+  componenten css -> komponenten bezogen  und kann nach unten zu implemetierten komponente vererbt werden
+
+
+## simuliertes Backend ##
+- products.ts --> Produkte
+Api
+- shipping.json --> Versandkosten (über httprequest zu erreichen)
+
+
+
+
+
+
