@@ -30,8 +30,12 @@ export class CartComponent {
 
       // Variablen Deklaration für Lieferadresse aus dme Formular    
       this.registerForm = this.formBuilder.group({  
+        firstName: ['', Validators.required],
+        lastName: ['', [Validators.required, Validators.minLength(2)]],
+        adress: ['', Validators.required],
+        city: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(6)]]
+               
       });
   }    
 

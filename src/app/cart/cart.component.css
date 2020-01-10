@@ -12,3 +12,14 @@ div p{
 div p:first-child {
   width:120px;
 }
+
+/* formular */
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  border-color: #dc3545;
+  padding-right: calc(1.5em + .75rem);  
+}
+
+.text-danger {
+  color: #dc3545!important;
+}
