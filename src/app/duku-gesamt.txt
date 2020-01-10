@@ -1,21 +1,28 @@
 
 Dokumentation für HANDYSHOP
 
-Quelltext und Script durch Angular Production-Mode nur kompiliert, deswegen gesamte Programmierung am besten unter:
-https://stackblitz.com/edit/angular-alfatraining-shop?file=src%2Fapp%2Fapp.component.HTML
-zu sehen.
-
 Anwendung als vollständige Seite unter:
 https://angular-alfatraining-shop.stackblitz.io/
 zu sehen.
+
+Quelltext und Script durch Angular Production-Mode nur kompiliert, deswegen gesamte Programmierung am besten unter:
+https://stackblitz.com/edit/angular-alfatraining-shop?file=src%2Fapp%2Fapp.component.HTML
+zu sehen. Inkl. Editor, Verzeichnis Struktur und kleiner Voransicht.
 
 Einzelne Arbeitsschritte unter: 
 https://github.com/munich99/angular-alfatraining (erter Teil Mittwoch, Donnerstag)
 https://github.com/munich99/angular-alfatraining-shop  (zweiter Teil Freitag)
 !!! Bitte dort jewils den "commits"-text Button klicken, um die einzelnen Arbeitsschritte zu sehen !!!
+dokumentiert.
 
 Quellen: Angular8 Google Ergebnisse
 
+
+++ Stammverzeichnis
+src/app/app.component.html
+bzw. Startdatei
+src/app/app.component.HTML  (Nicht Index.html!)
+++
 
 ## HTML Struktur - Componenten Struktur ##
 
