@@ -1,4 +1,15 @@
 
+Dokumentation für HANDYSHOP
+
+Quelltext und Script durch Angular Production-Mode nur kompiliert, deswegen gesamte Programmierung am besten unter:
+https://stackblitz.com/edit/angular-alfatraining-shop?file=src%2Fapp%2Fapp.component.HTML
+zu sehen.
+
+Anwendung als vollständige Seite unter:
+https://angular-alfatraining-shop.stackblitz.io/
+zu sehen
+
+
 ## HTML Struktur - Componenten Struktur ##
 
 app-root/ app.component.HTML

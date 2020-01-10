@@ -11,16 +11,21 @@ import { CartService } from '../cart.service';
 })
 export class CartComponent {
 
+   // Variable für Bestellliste und Gesamtpreis
   items;  
   totalprice;    
 
+  // Formular Variable, in der die gesamte Formulareigenschaft gespeichert wird 
   registerForm: FormGroup;
   submitted = false;
+
+  // Variable für Dankeschön nach der Bestellung und falls Warenkorb leer ist
   thx = false;
 
   constructor(
-    private cartService:CartService,
-    private  formBuilder:FormBuilder) {  
+    private cartService:CartService, // Instanz für Bestellliste
+    private  formBuilder:FormBuilder) // Instanz des Angular FormBuilder
+    {  
       // holt Bestellliste und Gesamtpreis vom CartService-Methode    
       this.items = this.cartService.getItems();
       this.totalprice = this.cartService.totalPrice();
@@ -28,7 +33,7 @@ export class CartComponent {
       // console.log(this.items.lenght,"länge")
       console.log(this.totalprice,"abgezogen cart");
 
-      // Variablen Deklaration für Lieferadresse aus dme Formular    
+      // Deklarieren aller Formular verfügbaren Formularfelder und  deren Validierungsregeln
       this.registerForm = this.formBuilder.group({  
         firstName: ['', Validators.required],
         lastName: ['', [Validators.required, Validators.minLength(2)]],
