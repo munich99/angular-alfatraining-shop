@@ -7,7 +7,14 @@ zu sehen.
 
 Anwendung als vollständige Seite unter:
 https://angular-alfatraining-shop.stackblitz.io/
-zu sehen
+zu sehen.
+
+Einzelne Arbeitsschritte unter: 
+https://github.com/munich99/angular-alfatraining (erter Teil Mittwoch, Donnerstag)
+https://github.com/munich99/angular-alfatraining-shop  (zweiter Teil Freitag)
+!!! Bitte dort jewils den "commits"-text Button klicken, um die einzelnen Arbeitsschritte zu sehen !!!
+
+Quellen: Angular8 Google Ergebnisse
 
 
 ## HTML Struktur - Componenten Struktur ##
